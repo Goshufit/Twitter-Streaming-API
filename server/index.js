@@ -1,6 +1,15 @@
+// Node.js follows the CommonJS module system, and the builtin require function is the easiest way to include modules that exist in separate files. The basic functionality of require is that it reads a JavaScript file, executes the file, and then proceeds to return the exports object //
+const http = require('http');
+const path = require('path');
+const express = require('express')
+socketIo = require('socket.io')
 const needle = require('needle');
 const config = require('dotenv').config();
 const TOKEN = process.env.TWITTER_BEARER_TOKEN;
+const PORT = process.env.PORT || 3000
+
+// Creates an Express application. The express() function is a top-level function exported by the express module. //
+const app = express()
 
 const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules';
 // The "?" is a query in the URL after that we add tweet.field to find the public metrics for instance how many retweets or comments then we add an expansion to the query to find the authors ID who posted the tweet //
