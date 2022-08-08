@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <title>Live Tweet Streams</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"
+        integrity="sha512-9mpsATI0KClwt+xVZfbcf2lJ8IFBAwsubJ6mI3rtULwyM3fBmQFzj0It4tGqxLOGQwGfJdk/G+fANnxfq9/cew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <Script>
+        const socket = io()
+
+        // Event: 'connect' Added in: v0.1.90 Emitted when a socket connection is successfully established. See net.createConnection(). //
+        // In programming, a socket is an endpoint of a communication between two programs running on a network. Sockets are used to create a connection between a client program and a server program. //
+        socket.on('connect', () => {
+            console.log('Connected to server...')
+        })
+
+        socket.on('tweet', (tweet) => {
+            console.log(tweet)
+        })
+
+    </Script>
+</body>
+
+</html>
