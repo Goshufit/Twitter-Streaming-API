@@ -64,6 +64,8 @@
             `
 
             tweetStream.appendChild(tweetEl)
+// Sets a timer to remove tweets once posted //
+            setTimeout(() => tweetEl.remove(), 6000)
         })
 
     </Script>
